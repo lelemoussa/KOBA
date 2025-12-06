@@ -1,9 +1,14 @@
-<div class="face-snap-card">
-    <h2>{{ title }}</h2>
-    <img [src]="imageUrl" [alt]="title">
-    <p>{{ description }}</p>
-    <p>FaceSnap créée le {{ createdAt }}</p>
-    <p>
-        <button (click)="onAddSnap()" >{{snapedtext}}</button>
-        🤌 {{ snaps }}</p>
-  </div>
+<div class="realisation-card">
+    <h2>{{ myRealisation.title }}</h2>
+
+    <img [src]="myRealisation.imageUrl" [alt]="myRealisation.title">
+
+    <p class="description">{{ myRealisation.description }}</p>
+
+    <p class="date">Ajouté le {{ myRealisation.createdAt | date: 'dd/MM/yyyy' }}</p>
+
+    <div class="actions">
+        <button (click)="onLike()" class="like-btn">{{ likeButtonText }}</button>
+        <span class="likes-count">👍 {{ myRealisation.likes }}</span>
+    </div>
+</div>

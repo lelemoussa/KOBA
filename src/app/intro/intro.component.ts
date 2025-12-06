@@ -1,46 +1,44 @@
-import { Component } from '@angular/core';
+// Fichier: src/app/intro/intro.component.ts
+import { Component, OnInit } from '@angular/core';
+import { Realisation } from '../models/realisation';
+import { DatePipe } from '@angular/common'; // Pour afficher la date proprement
 
 @Component({
   selector: 'app-intro',
   standalone: true,
-  imports: [],
+  imports: [DatePipe], // On ajoute le DatePipe
   templateUrl: './intro.component.html',
   styleUrl: './intro.component.scss'
 })
-export class IntroComponent {
-  title!: string;
-  description!: string;
-  createdAt!: Date;
-  snaps!: number;
-  imageUrl!: string;
-  snaped!: boolean;
-  snapedtext!:string;
+export class IntroComponent implements OnInit {
+  // On utilise notre nouveau modèle 'Realisation'
+  myRealisation!: Realisation;
+  isLiked!: boolean;
+  likeButtonText!: string;
 
   ngOnInit() {
-    this.title = 'KOBA';
-    this.description = 'KOBA est une entreprise ivoirienne reconnue pour son expertise';
-    this.createdAt = new Date();
-    this.snaps = 5;
-    this.imageUrl = 'https://cdn.pixabay.com/photo/2015/05/31/16/03/teddy-bear-792273_1280.jpg';
-    this.snaped= false;
-    this.snapedtext="🤍 j aime pas"
-  }
-  onAddSnap() {
-    if(this.snaped === false){
-      this.snaps++;
-      this.snapedtext="❤️ j aime"
-       this.snaped=true
-    }
-    else
-    {
-      this.snaps--
-      this.snapedtext="🤍 j aime pas"
-      this.snaped=false
-    }
+    // Initialisation avec une de tes vraies images (Portail moderne)
+    this.myRealisation = new Realisation(
+      'Portail Moderne Design',
+      'Portail métallique avec motifs découpés au laser et finition thermolaquée.',
+      'imag/315892611_126807570208959_4034219954716521169_n.jpg', // Chemin vers ton image dans le dossier public
+      new Date(),
+      15
+    );
 
-    
-
+    this.isLiked = false;
+    this.likeButtonText = "🤍 J'aime";
   }
 
-  
+  onLike() {
+    if (this.isLiked) {
+      this.myRealisation.likes--;
+      this.likeButtonText = "🤍 J'aime";
+      this.isLiked = false;
+    } else {
+      this.myRealisation.likes++;
+      this.likeButtonText = "❤️ J'aime déjà";
+      this.isLiked = true;
+    }
+  }
 }

@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="container">
+    <div class="nav-brand">
+      <h1>KOBA</h1>
+      <span>Ferronnerie</span>
+    </div>
+    
+    <nav class="nav" [class.nav-open]="isMenuOpen">
+      <a (click)="scrollTo('accueil')">Accueil</a>
+      <a (click)="scrollTo('services')">Services</a>
+      <a (click)="scrollTo('realisations')">Réalisations</a>
+      <a (click)="scrollTo('contact')">Contact</a>
+    </nav>
+
+    <div class="header-contact">
+      <div class="emergency">
+        <span>🚨 Urgence</span>
+        <a href="tel:0747334094">07 47 33 40 94</a>
+      </div>
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>

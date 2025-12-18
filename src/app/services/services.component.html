@@ -1,0 +1,20 @@
+<section id="services" class="services">
+  <div class="container">
+    <h2 class="section-title">Nos Prestations</h2>
+    
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+
+    <div class="services-cta">
+      <p class="highlight">
+        🔴 <strong>NB:</strong> Contactez-nous maintenant pour le devis de vos projets en ferronnerie ou en sécurité électronique. 
+        KOBA est là pour vous accompagner dès maintenant pour un devis gratuit et personnalisé.
+      </p>
+    </div>
+  </div>
+</section>

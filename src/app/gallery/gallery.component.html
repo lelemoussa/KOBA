@@ -1,0 +1,19 @@
+<section id="realisations" class="gallery">
+  <div class="container">
+    <h2 class="section-title">Nos Réalisations</h2>
+    
+    <div class="gallery-grid">
+      <div class="gallery-item" *ngFor="let item of realisations">
+        <div class="image-container">
+          <img [src]="item.image" [alt]="item.title">
+          <div class="overlay">
+            <div class="overlay-content">
+              <h3>{{ item.title }}</h3>
+              <span class="category">{{ item.category }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

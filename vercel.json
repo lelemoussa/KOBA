@@ -1,19 +1,11 @@
 {
-  "version": 2,
-  "name": "koba-ferronnerie",
-  "builds": [
+  "buildCommand": "npm run build:prod",
+  "outputDirectory": "dist/koba",
+  "framework": "angular",
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/koba"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }

@@ -10,23 +10,39 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 
   .nav-brand {
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin: 0;
-      letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .brand-logo {
+      height: 50px;
+      object-fit: contain;
     }
-    span {
-      font-size: 0.8rem;
-      color: var(--secondary);
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+
+      h1 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--primary-dark);
+        margin: 0;
+        letter-spacing: 1px;
+        line-height: 1;
+      }
+      span {
+        font-size: 0.75rem;
+        color: var(--secondary);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-top: 2px;
+      }
     }
   }
 
@@ -37,10 +53,11 @@
     a {
       text-decoration: none;
       color: var(--secondary);
-      font-weight: 500;
+      font-weight: 600;
       cursor: pointer;
       transition: color 0.3s;
       position: relative;
+      font-size: 0.95rem;
 
       &::after {
         content: '';
@@ -49,12 +66,12 @@
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--primary);
+        background: var(--accent);
         transition: width 0.3s;
       }
 
       &:hover {
-        color: var(--primary);
+        color: var(--primary-dark);
 
         &::after {
           width: 100%;
@@ -71,15 +88,16 @@
     .header-whatsapp {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       background: #25D366;
       color: white;
-      padding: 8px 18px;
-      border-radius: 25px;
+      padding: 10px 20px;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       transition: all 0.3s;
+      box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
 
       svg {
         flex-shrink: 0;
@@ -88,7 +106,7 @@
       &:hover {
         background: #1da851;
         transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
       }
     }
   }
@@ -109,6 +127,12 @@
     }
   }
 
+  @media (max-width: 900px) {
+    .brand-text {
+      display: none !important;
+    }
+  }
+
   @media (max-width: 768px) {
     .nav {
       position: absolute;
@@ -118,7 +142,7 @@
       background: white;
       flex-direction: column;
       padding: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
@@ -129,6 +153,13 @@
         opacity: 1;
         visibility: visible;
       }
+      
+      a {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        
+        &::after { display: none; }
+      }
     }
 
     .menu-toggle {
@@ -136,8 +167,8 @@
     }
 
     .header-contact .header-whatsapp {
-      padding: 6px 14px;
-      font-size: 0.8rem;
+      padding: 8px 14px;
+      font-size: 0.85rem;
     }
   }
 }

@@ -1,51 +1,81 @@
 .hero {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 50%, #1a1a1a 100%);
-  padding: 120px 0 80px;
-  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  padding: 140px 0 100px;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  position: relative;
+  overflow: hidden;
 
-  .container {
+  .hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../public/imag/hero-koba.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .relative-z {
+    position: relative;
+    z-index: 10;
+  }
+
+  .hero-content-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
 
   .hero-text {
     animation: fadeInLeft 1s ease;
 
-    h1 {
-      font-size: 3.5rem;
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 10px;
-      line-height: 1.2;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
       animation: fadeInUp 0.8s ease;
-      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: 3.8rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 5px;
+      line-height: 1.1;
+      animation: fadeInUp 0.8s ease 0.1s both;
 
       .accent {
-        color: var(--primary);
+        color: var(--accent);
       }
     }
 
     h2 {
-      font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 20px;
-      font-weight: 400;
+      font-size: 2rem;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 25px;
+      font-weight: 600;
       animation: fadeInUp 0.8s ease 0.2s both;
     }
 
     p {
-      font-size: 1.1rem;
-      color: rgba(255, 255, 255, 0.75);
-      line-height: 1.8;
+      font-size: 1.15rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.7;
       margin-bottom: 40px;
-      animation: fadeInUp 0.8s ease 0.4s both;
+      animation: fadeInUp 0.8s ease 0.3s both;
     }
   }
 
@@ -53,7 +83,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    animation: fadeInUp 0.8s ease 0.6s both;
+    animation: fadeInUp 0.8s ease 0.4s both;
 
     .btn-whatsapp {
       background: #25D366;
@@ -67,8 +97,7 @@
       align-items: center;
       gap: 10px;
       transition: all 0.3s;
-      animation: pulse 2s infinite;
-      border: none;
+      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
 
       svg {
         flex-shrink: 0;
@@ -76,87 +105,93 @@
 
       &:hover {
         background: #1da851;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
       }
     }
 
     .btn-outline-light {
-      background: transparent;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
       color: white;
       padding: 16px 32px;
       border-radius: 50px;
-      border: 2px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 8px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.05rem;
       transition: all 0.3s;
 
       &:hover {
-        border-color: var(--primary);
-        background: var(--primary);
+        background: rgba(255, 255, 255, 0.2);
+        border-color: white;
         transform: translateY(-3px);
       }
     }
   }
 
-  .hero-image {
+  .hero-image-card {
     animation: fadeInRight 1s ease;
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    transform: perspective(1000px) rotateY(-5deg);
+    transition: transform 0.5s ease;
+
+    &:hover {
+      transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+    }
 
     img {
       width: 100%;
-      height: 450px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-      border: 3px solid rgba(200, 16, 46, 0.3);
-
-      &:hover {
-        transform: scale(1.02);
-      }
+      height: auto;
+      border-radius: 12px;
+      display: block;
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 100px 0 60px;
-
-    .container {
+  @media (max-width: 992px) {
+    .hero-content-wrapper {
       grid-template-columns: 1fr;
-      gap: 40px;
       text-align: center;
+      gap: 40px;
     }
 
     .hero-text {
-      h1 {
-        font-size: 2.5rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-    }
-
-    .hero-image {
-      order: -1;
-      
-      img {
-        height: 280px;
-      }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 1.5rem; }
     }
 
     .hero-cta {
       justify-content: center;
-      flex-direction: column;
-      align-items: center;
+    }
 
-      .btn-whatsapp, .btn-outline-light {
-        width: 100%;
-        justify-content: center;
+    .hero-image-card {
+      transform: none;
+      max-width: 600px;
+      margin: 0 auto;
+
+      &:hover {
+        transform: translateY(-10px);
       }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 120px 0 60px;
+    
+    .hero-text h1 { font-size: 2.2rem; }
+    .hero-text h2 { font-size: 1.2rem; }
+    
+    .hero-cta {
+      flex-direction: column;
+      .btn { width: 100%; justify-content: center; }
     }
   }
 }

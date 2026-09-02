@@ -1,20 +1,26 @@
 <section id="services" class="services">
   <div class="container">
     <h2 class="section-title">Nos Prestations</h2>
+    <p class="section-subtitle">La qualité de nos finitions et la solidité de nos ouvrages sont notre priorité</p>
     
     <div class="services-grid">
       <div class="service-card" *ngFor="let service of services">
         <div class="service-icon">{{ service.icon }}</div>
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
+        <a [href]="getWhatsappLink(service.title)" target="_blank" class="service-whatsapp">
+          💬 Devis WhatsApp
+        </a>
       </div>
     </div>
 
     <div class="services-cta">
       <p class="highlight">
-        🔴 <strong>NB:</strong> Contactez-nous maintenant pour le devis de vos projets en ferronnerie ou en sécurité électronique. 
-        KOBA est là pour vous accompagner dès maintenant pour un devis gratuit et personnalisé.
+        📐🛠️ <strong>Visite technique gratuite :</strong> Nous venons directement à vous pour évaluer le chantier et vous proposer la solution technique la plus adaptée. Chaque projet est unique !
       </p>
+      <a href="https://wa.me/2250104221119?text=Bonjour%20KOBA%20!%20Je%20souhaite%20planifier%20une%20visite%20technique%20pour%20mon%20projet." target="_blank" class="btn btn-whatsapp-cta">
+        💬 Planifier une visite sur WhatsApp
+      </a>
     </div>
   </div>
 </section>

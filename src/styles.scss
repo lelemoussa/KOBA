@@ -14,10 +14,10 @@ body {
 }
 
 :root {
-  --primary: #d32f2f;
+  --primary: #C8102E;
   --secondary: #1a1a1a;
-  --accent: #ff6b35;
-  --light: #f5f5f5;
+  --accent: #D4A537;
+  --light: #F5F3EF;
   --dark: #212121;
 }
 
@@ -42,7 +42,7 @@ body {
   background: var(--primary);
   color: white;
   &:hover {
-    background: #b71c1c;
+    background: #a00d24;
     transform: translateY(-2px);
   }
 }
@@ -72,7 +72,7 @@ body {
     display: block;
     width: 80px;
     height: 4px;
-    background: var(--primary);
+    background: var(--accent);
     margin: 15px auto 0;
     transform: scaleX(0);
     animation: scaleX 0.6s ease 0.3s forwards;

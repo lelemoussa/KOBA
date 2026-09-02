@@ -12,21 +12,34 @@
 
   .footer-section {
     h3 {
-      color: var(--primary);
+      color: var(--accent);
       font-size: 1.5rem;
       margin-bottom: 20px;
+      letter-spacing: 1px;
     }
 
     h4 {
       color: white;
       font-size: 1.2rem;
       margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent);
+      }
     }
 
     p {
       color: #ccc;
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     ul {
@@ -41,7 +54,7 @@
 
         &::before {
           content: '▸';
-          color: var(--primary);
+          color: var(--accent);
           position: absolute;
           left: 0;
         }
@@ -63,7 +76,7 @@
         text-decoration: none;
         
         &:hover {
-          color: var(--primary);
+          color: var(--accent);
         }
       }
     }
@@ -72,14 +85,9 @@
       margin-top: 20px;
       
       span {
-        color: #ccc;
-        margin-right: 10px;
+        color: var(--accent);
+        font-weight: 500;
       }
-    }
-
-    .emergency {
-      color: var(--primary) !important;
-      font-weight: 600;
     }
   }
 
@@ -105,6 +113,11 @@
 
     .footer-section {
       text-align: center;
+
+      h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

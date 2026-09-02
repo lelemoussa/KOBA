@@ -19,19 +19,20 @@ export class ContactComponent {
   };
 
   services = [
-    'Portail motorisé',
-    'Grille de protection', 
-    'Garde-corps',
     'Escalier métallique',
+    'Pergola personnalisée',
+    'Portail (coulissant / battant)',
     'Charpente métallique',
-    'Carrosserie',
+    'Garde-corps & Rampe',
+    'Grille de protection',
+    'Menuiserie métallique',
+    'Ouvrage sur mesure',
     'Autre'
   ];
 
   onSubmit() {
-    // Simulation d'envoi
-    alert('Merci pour votre demande ! Nous vous recontacterons rapidement.');
-    this.resetForm();
+    const message = `Bonjour KOBA Ferronnerie,%0A%0AJe suis ${this.formData.name}.%0A%0AService souhaité: ${this.formData.service}%0ATéléphone: ${this.formData.phone}%0AEmail: ${this.formData.email}%0A%0AMessage: ${this.formData.message}%0A%0AMerci !`;
+    window.open(`https://wa.me/2250104221119?text=${message}`, '_blank');
   }
 
   resetForm() {

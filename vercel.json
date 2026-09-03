@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build:prod",
-  "outputDirectory": "dist/koba",
+  "outputDirectory": "dist/koba/browser",
   "framework": "angular",
   "rewrites": [
     {

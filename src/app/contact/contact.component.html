@@ -4,24 +4,17 @@
     
     <div class="contact-content">
       <div class="contact-info">
-        <h3>Coordonnées</h3>
+        <h3>Prêt à donner vie à vos idées ?</h3>
+        <p class="contact-subtitle">Envoyez-nous un message sur WhatsApp pour planifier une visite technique gratuite !</p>
         
         <div class="info-item">
           <span class="icon">📞</span>
           <div>
             <strong>Téléphones</strong>
             <p>
-              <a href="tel:0747334094">07 47 33 40 94</a> / 
+              <a href="tel:0104221119">01 04 22 11 19</a> / 
               <a href="tel:0140209303">01 40 20 93 03</a>
             </p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <span class="icon">✉️</span>
-          <div>
-            <strong>Email</strong>
-            <p><a href="mailto:kobaentreprise58&#64;gmail.com">kobaentreprise58&#64;gmail.com</a></p>
           </div>
         </div>
 
@@ -29,19 +22,30 @@
           <span class="icon">📍</span>
           <div>
             <strong>Adresse</strong>
-            <p>Marcory (Anoumabo)<br>Carrefour milieu</p>
+            <p>Marcory (Anoumabo), Carrefour milieu<br>Abidjan, Côte d'Ivoire</p>
           </div>
         </div>
 
-        <div class="emergency-contact">
-          <h4>🚨 Contact d'urgence</h4>
-          <p>Disponible 24h/24 pour vos urgences</p>
-          <a href="tel:0747334094" class="btn btn-primary">Appeler maintenant</a>
+        <div class="info-item">
+          <span class="icon">📐</span>
+          <div>
+            <strong>Visite Technique</strong>
+            <p>Nous nous déplaçons directement sur votre chantier pour évaluer votre projet et prendre les mesures.</p>
+          </div>
+        </div>
+
+        <div class="whatsapp-contact-card">
+          <h4>💬 Écrivez-nous sur WhatsApp</h4>
+          <p>La façon la plus rapide de nous joindre et d'obtenir un devis</p>
+          <a href="https://wa.me/2250104221119?text=Bonjour%20KOBA%20Ferronnerie%20!%20Je%20souhaite%20des%20informations%20sur%20vos%20services." target="_blank" class="btn btn-whatsapp-big">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ouvrir WhatsApp
+          </a>
         </div>
       </div>
 
       <div class="contact-form">
-        <h3>Demande de devis gratuit</h3>
+        <h3>Demande de devis rapide</h3>
         
         <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
           <div class="form-group">
@@ -49,16 +53,7 @@
               type="text" 
               [(ngModel)]="formData.name" 
               name="name"
-              placeholder="Votre nom *" 
-              required>
-          </div>
-
-          <div class="form-group">
-            <input 
-              type="email" 
-              [(ngModel)]="formData.email" 
-              name="email"
-              placeholder="Votre email *" 
+              placeholder="Votre nom complet *" 
               required>
           </div>
 
@@ -82,15 +77,16 @@
             <textarea 
               [(ngModel)]="formData.message" 
               name="message"
-              placeholder="Décrivez votre projet..."
-              rows="5"></textarea>
+              placeholder="Décrivez votre projet (dimensions, matériaux souhaités...)"
+              rows="4"></textarea>
           </div>
 
           <button 
             type="submit" 
-            class="btn btn-primary"
+            class="btn btn-whatsapp-submit"
             [disabled]="!contactForm.form.valid">
-            Envoyer ma demande
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Envoyer via WhatsApp
           </button>
         </form>
       </div>

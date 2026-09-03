@@ -5,6 +5,7 @@ import { ServicesComponent } from './services/services.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
+import { WhatsappFabComponent } from './whatsapp-fab/whatsapp-fab.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { FooterComponent } from './footer/footer.component';
     ServicesComponent,
     GalleryComponent,
     ContactComponent,
-    FooterComponent
+    FooterComponent,
+    WhatsappFabComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
